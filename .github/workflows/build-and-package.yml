@@ -29,7 +29,7 @@ jobs:
         run: unzip ugs-linux-x64.zip -d cli
 
       - name: Publish project
-        run: dotnet publish --runtime linux-x64 EndlessRunnerServer.csproj --output ./publish
+        run: dotnet publish --runtime linux-x64 EndlessRunnerServer/EndlessRunnerServer.csproj --output ./publish
 
       - name: Zip published files
         run: zip -r publish.zip publish
