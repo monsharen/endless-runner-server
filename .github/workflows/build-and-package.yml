@@ -36,7 +36,7 @@ jobs:
       - name: CLI Set Env ID
         run: cli/ugs config set environment ${{ secrets.UNITY_ENVIRONMENT_ID }}
       - name: CLI Publish
-        run: cli/ugs cloud-code modules deploy EndlessRunnerServer ./publish/publish.zip
+        run: cli/ugs cloud-code modules deploy EndlessRunnerServer ./publish.zip
 
       #- name: Upload zip artifact
       #  uses: actions/upload-artifact@v1
