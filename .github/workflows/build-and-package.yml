@@ -4,6 +4,15 @@ on:
   push:
     branches: [ main ]
 
+env: 
+  UGS_CLI_SERVICE_KEY_ID : ${{ secrets.UNITY_SERVICE_KEY_ID }}
+  UGS_CLI_SERVICE_SECRET_KEY : ${{ secrets.UNITY_SERVICE_SECRET_KEY }}
+  
+  # PLEASE ENTER YOUR PROJECT INFO      
+  UGS_CLI_PROJECT_ID: "133ec1d5-b4aa-40b8-878e-3e6af3f869aa"
+  # PLEASE ENTER YOUR ENVIRONMENT INFO      
+  UGS_CLI_ENVIRONMENT_NAME: "135a4c0f-9b3b-44a6-a3ac-666090547280"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,13 +44,7 @@ jobs:
         run: cli/ugs config set project-id ${{ secrets.UNITY_PROJECT_ID }}
       - name: CLI Set Env ID
         run: cli/ugs config set environment ${{ secrets.UNITY_ENVIRONMENT_ID }}
-
-
-      - name: CLI authentication
-        run: |
-          cli/ugs auth login --service-credentials ${{ secrets.UNITY_SERVICE_KEY_ID }}
-          ${{ secrets.UNITY_SERVICE_SECRET_KEY }}
-          
+         
       - name: CLI Publish
         run: cli/ugs cloud-code modules deploy EndlessRunnerServer ./publish.zip
 
