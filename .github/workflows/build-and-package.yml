@@ -22,11 +22,11 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Download Third-Party CLI
-        run: curl -LO https://github.com/Unity-Technologies/unity-gaming-services-cli/releases/download/v1.0.0-beta.1/ugs-linux-x64.zip
+      #- name: Download Third-Party CLI
+      #  run: curl -LO https://github.com/Unity-Technologies/unity-gaming-services-cli/releases/download/v1.0.0-beta.1/ugs-linux-x64.zip
 
-      - name: Extract Third-Party CLI
-        run: unzip ugs-linux-x64.zip -d cli
+      #- name: Extract Third-Party CLI
+      #  run: unzip ugs-linux-x64.zip -d cli
 
       - name: Publish project
         run: dotnet publish --runtime linux-x64 EndlessRunnerServer/EndlessRunnerServer.csproj --output ./publish
