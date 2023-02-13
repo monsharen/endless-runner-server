@@ -45,7 +45,13 @@ jobs:
         run: cli/ugs config set project-id ${{ secrets.UNITY_PROJECT_ID }}
       - name: CLI Set Env ID
         run: cli/ugs config set environment ${{ secrets.UNITY_ENVIRONMENT_ID }}
-         
+
+
+      - name: CLI authentication
+        run: |
+          cli/ugs auth login --service-credentials ${{ secrets.UNITY_SERVICE_KEY_ID }}
+        stdin?: ${{ secrets.UNITY_SERVICE_SECRET_KEY }}
+          
       - name: CLI Publish
         run: cli/ugs cloud-code modules deploy EndlessRunnerServer ./publish.zip
 
