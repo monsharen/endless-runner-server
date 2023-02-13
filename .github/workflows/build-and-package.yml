@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      UGS_CLI_SERVICE_KEY: ${{ secrets.UNITY_SERVICE_KEY_ID }}
+      UGS_CLI_SERVICE_SECRET: ${{ secrets.UNITY_SERVICE_SECRET_KEY }}
     environment: production
     steps:
       - name: Checkout code
