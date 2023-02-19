@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net48</TargetFramework>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <!-- ImplicitUsings>enable</ImplicitUsings -->
         <!-- Nullable>enable</Nullable -->
     </PropertyGroup>
 
