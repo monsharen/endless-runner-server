@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net48</TargetFramework>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <!-- Nullable>enable</Nullable -->
     </PropertyGroup>
 
     <ItemGroup>
